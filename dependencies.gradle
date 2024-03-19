@@ -1,0 +1,65 @@
+dependencies {
+    implementation "org.jetbrains:annotations:24.0.0"
+
+    // Dependencies
+    implementation "CraftTweaker2:CraftTweaker2-API:" + project.crafttweaker
+    implementation "CraftTweaker2:ZenScript:" + project.crafttweaker
+    implementation "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-" + project.crafttweaker
+
+    implementation rfg.deobf("curse.maven:had-enough-items-557549:" + project.hei)
+    implementation rfg.deobf("curse.maven:the-one-probe-community-edition-885670:" + project.top)
+    implementation("com.cleanroommc:groovyscript:" + project.groovyscript) { transitive = false }
+    // so it doesn't installs JEI
+
+    implementation "com.azanor.baubles:Baubles:1.12-" + project.baubles
+    implementation rfg.deobf("curse.maven:ic2_classic-242942:" + project.ic2c)
+    implementation rfg.deobf("curse.maven:vintage-gregtech-844311:" + project.vgt)
+
+    // Compatibility
+    compileOnly rfg.deobf("curse.maven:ic2c-extras-302906:" + project.ic2c_ex)
+
+    if (project.compat_internal.toBoolean()) {
+        runtimeOnly rfg.deobf("curse.maven:ic2c-extras-302906:" + project.ic2c_ex)
+        runtimeOnly rfg.deobf("curse.maven:advanced-solars-classic-314835:" + project.advanced_solars)
+        runtimeOnly rfg.deobf("curse.maven:gravisuit-classic-314829:" + project.gravisuit)
+        runtimeOnly rfg.deobf("curse.maven:ic2c-additions-304040:" + project.ic2c_ad)
+        runtimeOnly rfg.deobf("curse.maven:ic2c-crop-overrides-334346:" + project.ic2c_crop)
+        runtimeOnly rfg.deobf("curse.maven:ic2c-custom-soils-350486:" + project.ic2c_soil)
+    }
+
+    forestry = "curse.maven:forestry-59751:" + project.forestry
+    railcraft = "curse.maven:railcraft-51195:" + project.railcraft
+    better_pipes = "curse.maven:better_pipes-402834:" + project.better_pipes
+    twilight_forest = "curse.maven:twilight_forest-227639:" + project.twilight_forest
+    redstone_flux = "curse.maven:redstone-flux-270789:" + project.redstone_flux
+    cofh_core = "curse.maven:cofh-core-69162:" + project.cofh_core
+    steve_carts = "curse.maven:steves-carts-reborn-253462:" + project.steve_carts
+
+    compileOnly rfg.deobf(forestry)
+    compileOnly rfg.deobf(railcraft)
+    compileOnly rfg.deobf(better_pipes)
+    compileOnly rfg.deobf(twilight_forest)
+    compileOnly rfg.deobf(redstone_flux)
+    compileOnly rfg.deobf(cofh_core)
+
+    if (project.compat_external.toBoolean()) {
+        runtimeOnly rfg.deobf(forestry)
+        runtimeOnly rfg.deobf(railcraft)
+        runtimeOnly rfg.deobf(better_pipes)
+        runtimeOnly rfg.deobf(twilight_forest)
+        runtimeOnly rfg.deobf(redstone_flux)
+        runtimeOnly rfg.deobf(cofh_core)
+        runtimeOnly rfg.deobf("curse.maven:reborncore-237903:" + project.reborncore)
+        runtimeOnly rfg.deobf(steve_carts)
+        runtimeOnly rfg.deobf("curse.maven:sc-ic2c-compat-409410:" + project.sc_ic2c_compat)
+    }
+
+    // Runtime dependencies
+    runtimeOnly rfg.deobf("curse.maven:vintagefix-871198:" + project.vintagefix)
+    runtimeOnly rfg.deobf("curse.maven:startup-timer-782070:" + project.startuptimer)
+
+    runtimeOnly "com.cleanroommc:configanytime:" + project.configanytime
+    runtimeOnly rfg.deobf("curse.maven:red-core-873867:" + project.redcore)
+    runtimeOnly rfg.deobf("curse.maven:alfheim-lighting-engine-910715:" + project.alfheim)
+    runtimeOnly rfg.deobf("curse.maven:valkyrie-874067:" + project.valkyrie)
+}

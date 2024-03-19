@@ -25,6 +25,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -39,7 +40,7 @@ public class GTCXBlockMisc extends GTBlockBase implements IGTBurnableBlock, ITil
         this.name = name;
         this.id = id;
         setRegistryName(this.name);
-        setUnlocalizedName(comp);
+        setTranslationKey(comp);
         setCreativeTab(GTMod.creativeTabGT);
         setHardness(hardness);
         setResistance(resistence);
@@ -125,7 +126,7 @@ public class GTCXBlockMisc extends GTBlockBase implements IGTBurnableBlock, ITil
 
     @Nullable
     @Override
-    public TileEntity createNewTileEntity(World worldIn, int meta) {
+    public TileEntity createNewTileEntity(@NotNull World worldIn, int meta) {
         return null;
     }
 }

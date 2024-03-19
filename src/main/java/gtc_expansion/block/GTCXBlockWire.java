@@ -64,7 +64,7 @@ public class GTCXBlockWire extends GTBlockBaseConnect implements IGTColorBlock, 
     GTMaterial material;
     public GTCXBlockWire(String name, LocaleComp comp, GTMaterial material){
         super();
-        setUnlocalizedName(comp);
+        setTranslationKey(comp);
         setRegistryName(name);
         this.setHardness(0.2F);
         this.setSoundType(SoundType.CLOTH);

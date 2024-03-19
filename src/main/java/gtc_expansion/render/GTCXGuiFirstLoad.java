@@ -49,7 +49,7 @@ public class GTCXGuiFirstLoad extends GuiScreen {
             if(i == 6 || i == 8)
                 y += 8;
         }
-        drawCenteredString(fontRenderer, "Trinsdar", x, y, 0xFFFFFF);
+        drawCenteredString(fontRenderer, "_MasterEnderman_", x, y, 0xFFFFFF);
     }
 
     @Override

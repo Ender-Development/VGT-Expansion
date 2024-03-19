@@ -1,16 +1,19 @@
 [
-{
-  "modid": "gtc_expansion",
-  "name": "GTC Expansion",
-  "description": "An addon to GT Classic implementing gt4 features",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["trinsdar"],
-  "credits": "e99999, muramasa, speiger for making ic2 classic, Gregorious T for making GT",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": []
-}
+  {
+    "modid": "gtc_expansion",
+    "name": "VGT Expansion",
+    "description": "An addon to Vintage GregTech implementing various GT4 features",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/Ender-Development/VGT-Expansion",
+    "updateUrl": "",
+    "authorList": [
+      "trinsdar",
+      "Ender-Development"
+    ],
+    "credits": "e99999, muramasa, speiger for making ic2 classic, Gregorious T for making GT",
+    "logoFile": "icon.png",
+    "screenshots": [],
+    "dependencies": []
+  }
 ]
