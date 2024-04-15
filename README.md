@@ -1,7 +1,3 @@
----
-note: "I still need to fix the curseforge IDs"
----
-
 <img src="project_logo.png" align="left" width="180px"/>
 
 # VGT - Expansion
