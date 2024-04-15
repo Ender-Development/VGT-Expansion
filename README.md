@@ -7,11 +7,11 @@ note: "I still need to fix the curseforge IDs"
 # VGT - Expansion
 
 [![License](https://img.shields.io/github/license/Ender-Development/VGT-Expansion.svg?label=License)](LICENSE)
-[![Versions](https://img.shields.io/curseforge/game-versions/936489?logo=curseforge&label=Game%20Version)](https://www.curseforge.com/minecraft/mc-mods/vgt-expansion)
-[![Downloads](https://img.shields.io/curseforge/dt/936489?logo=curseforge&label=Downloads)](https://www.curseforge.com/minecraft/mc-mods/vgt-expansion)
+[![Versions](https://img.shields.io/curseforge/game-versions/349126?logo=curseforge&label=Game%20Version)](https://www.curseforge.com/minecraft/mc-mods/gtc-expansion)
+[![Downloads](https://img.shields.io/curseforge/dt/349126?logo=curseforge&label=Downloads)](https://www.curseforge.com/minecraft/mc-mods/gtc-expansion)
 
 *VGT goes GT4*
-• [CurseForge](https://curseforge.com/minecraft/mc-mods/vgt-expansion)
+• [CurseForge](https://curseforge.com/minecraft/mc-mods/gtc-expansion)
 • [Changelog](CHANGELOG.md)
 • [Bugtracker](https://github.com/Ender-Development/VGT-Expansion/issues)
 
