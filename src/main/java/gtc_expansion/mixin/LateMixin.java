@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class LateMixin implements ILateMixinLoader {
     public static final List<String> modMixins = ImmutableList.of(
-            //"ic2c_extras"
+            "gtclassic"
     );
 
     @Override
