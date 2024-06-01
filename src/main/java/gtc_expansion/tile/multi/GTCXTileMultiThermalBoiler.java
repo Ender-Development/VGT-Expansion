@@ -248,7 +248,7 @@ public class GTCXTileMultiThermalBoiler extends TileEntityMachine implements ITi
                     lava = true;
                     lavaTank = inputTank2;
                 }
-                if (water && lava && lavaTank.getFluidAmount() >= 500 && waterTank.getFluidAmount() >= 5){
+                if (water && lava && lavaTank.getFluidAmount() >= 80 && waterTank.getFluidAmount() >= 5){
                     OutputModes cycle1 = outputMode1;
                     if (hasBothOutputs){
                         OutputModes cycle2 = outputMode2;
@@ -268,7 +268,7 @@ public class GTCXTileMultiThermalBoiler extends TileEntityMachine implements ITi
                                         this.setActive(true);
                                     }
                                     waterTank.drainInternal(5, true);
-                                    lavaTank.drainInternal(500, true);
+                                    lavaTank.drainInternal(80, true);
                                     if (obsidianTicker >= 1){
                                         addObsidian(true);
                                     } else {
