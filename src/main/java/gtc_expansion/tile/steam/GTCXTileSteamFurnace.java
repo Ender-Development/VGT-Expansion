@@ -16,6 +16,7 @@ import ic2.core.inventory.gui.custom.MachineGui;
 import ic2.core.platform.registry.Ic2Sounds;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.ArrayList;
@@ -76,6 +77,10 @@ public class GTCXTileSteamFurnace extends GTCXTileBaseSteamMachine {
         for (IMachineRecipeList.RecipeEntry entry : ClassicRecipes.furnace.getRecipeMap()){
             addRecipe(entry.getInput(), entry.getOutput());
         }
+    }
+
+    public boolean isValidInput(ItemStack k) {
+        return true;
     }
 
     static void addRecipe(IRecipeInput input, MachineOutput output) {

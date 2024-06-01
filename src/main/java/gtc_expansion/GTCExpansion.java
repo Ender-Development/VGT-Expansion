@@ -33,7 +33,7 @@ public class GTCExpansion {
 
 	public static final String MODID = "gtc_expansion";
 	public static final String MODNAME = "VGT Expansion";
-	public static final String MODVERSION = Tags.VERSION;
+	public static final String MODVERSION = "0.3.0";
 	public static final String DEPENDS = "required-after:ic2;required-after:ic2-classic-spmod;required-after:gtclassic@[1.2,);after:twilightforest@[3.9.984,);after:ic2c_extras@[1.4.8.7,);after:gravisuit@[1.0.8.1,);after:advancedsolars@[1.0.8,)";
 	@SidedProxy(clientSide = MODID + ".proxy.GTCXClientProxy", serverSide = MODID + ".proxy.GTCXCommonProxy")
 	public static GTCXCommonProxy proxy;
