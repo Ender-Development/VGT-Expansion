@@ -10,7 +10,7 @@ public class GTCXConfiguration {
     @Config.RequiresMcRestart
     public static Generation generation = new Generation();
 
-    public static class Generation{
+    public static class Generation {
         @Comment("Generate Pyrite ore in the nether")
         public boolean pyriteGenerate = true;
         @Comment("Max size of Pyrite veins")
@@ -113,7 +113,7 @@ public class GTCXConfiguration {
     @Config.RequiresMcRestart
     public static General general = new General();
 
-    public static class General{
+    public static class General {
         @Comment("Enables quite a few of GT recipes using plates instead of ingots.")
         public boolean usePlates = true;
         @Comment({
@@ -168,7 +168,7 @@ public class GTCXConfiguration {
     @Config.RequiresMcRestart
     public static ModCompat modcompat = new ModCompat();
 
-    public static class ModCompat{
+    public static class ModCompat {
 
         public boolean compatGravisuit = true;
         public boolean compatRailcraft = true;
@@ -177,9 +177,86 @@ public class GTCXConfiguration {
     @Comment("Client side config options")
     public static Client client = new Client();
 
-    public static class Client{
+    public static class Client {
 
         @Comment("Enables glow from enchants on gtcx regular tools (so sword, axe, ect.)")
         public boolean enableGTCXToolGlow = true;
+    }
+
+    @Comment("Recipe options")
+    @Config.RequiresMcRestart
+    public static Recipes recipes = new Recipes();
+
+    public static class Recipes {
+        @Comment("Enables removing of some default ic2 and vgt recipes.")
+        public boolean removeRecipes = true;
+        @Comment("Enables adding various processing recipes.")
+        public boolean addProcessingRecipes = true;
+        @Comment("Add default recipes to the centrifuge.")
+        public boolean addCentrifugeRecipes = true;
+        @Comment("Add default recipes to the electrolyzer.")
+        public boolean addElectrolyzerRecipes = true;
+        @Comment("Add default recipes to the vacuum freezer.")
+        public boolean addMultiVacuumFreezerRecipes = true;
+        @Comment("Add default recipes to the industrial grinder.")
+        public boolean addMultiIndustrialGrinderRecipes = true;
+        @Comment("Add default recipes to the chemical bath.")
+        public boolean addBathRecipes = true;
+        @Comment("Add default recipes to the implosion compressor.")
+        public boolean addMultiImplosionCompressorRecipes = true;
+        @Comment("Add default recipes to the industrial blast furnace.")
+        public boolean addMultiIndustrialBlastFurnaceRecipes = true;
+        @Comment("Add default recipes to the distillation tower.")
+        public boolean addMultiDistillationTowerRecipes = true;
+        @Comment("Add default recipes to the alloy smelter.")
+        public boolean addAlloySmelterRecipes = true;
+        @Comment("Add default recipes to the assembing machine.")
+        public boolean addAssemblingMachineRecipes = true;
+        @Comment("Add default recipes to the chemical reactor.")
+        public boolean addChemicalReactorRecipes = true;
+        @Comment("Add default recipes to the primitive blast furnace.")
+        public boolean addMultiPrimitiveBlastFurnaceRecipes = true;
+        @Comment("Add default recipes to the fluid caster.")
+        public boolean addFluidCasterRecipes = true;
+        @Comment("Add default recipes to the fluid smelter.")
+        public boolean addFluidSmelterRecipes = true;
+        @Comment("Add default recipes to the bender.")
+        public boolean addPlateBenderRecipes = true;
+        @Comment("Add default recipes to the cutter.")
+        public boolean addPlateCutterRecipes = true;
+        @Comment("Add default recipes to the wiremill.")
+        public boolean addWiremillRecipes = true;
+        @Comment("Add default recipes to the extruder.")
+        public boolean addExtruderRecipes = true;
+        @Comment("Add default recipes to the lathe.")
+        public boolean addLatheRecipes = true;
+        @Comment("Add default recipes to the diesel generator.")
+        public boolean addDieselGeneratorRecipes = true;
+        @Comment("Add default recipes to the gas turbine.")
+        public boolean addGasTurbineRecipes = true;
+        @Comment("Add default recipes to the coke oven.")
+        public boolean addMultiCokeOvenRecipes = true;
+        @Comment("Add default recipes to the steam forge hammer.")
+        public boolean addSteamForgeHammerRecipes = true;
+        @Comment("Add default recipes to the microwave.")
+        public boolean addMicrowaveRecipes = true;
+        @Comment("Add default recipes to the steam compressor.")
+        public boolean addSteamCompressorRecipes = true;
+        @Comment("Add default recipes to the steam extractor.")
+        public boolean addSteamExtractorRecipes = true;
+        @Comment("Add default recipes to the steam macerator.")
+        public boolean addSteamMaceratorRecipes = true;
+        @Comment("Add default recipes to the steam furnace.")
+        public boolean addSteamFurnaceRecipes = true;
+        @Comment("Add default recipes to the industrial sawmill.")
+        public boolean addMultiIndustrialSawmillRecipes = true;
+        @Comment("Add default recipes to the fusion reactor.")
+        public boolean addMultiFusionReactorRecipes = true;
+        @Comment("Add recipes for mod compat.")
+        public boolean addModCompatRecipes = true;
+        @Comment("Add oredict machine recipes.")
+        public boolean addOredictMachineRecipes = true;
+        @Comment("Add all the recipes that aren't explicitly defined above.")
+        public boolean addMiscRecipes = true;
     }
 }
