@@ -289,7 +289,7 @@ public class GTCXTileMultiFusionReactor extends GTTileMultiBaseMachine implement
             handleRedstone();
             updateNeighbors();
             boolean noRoom = addToInventory();
-            if (shouldCheckRecipe) {
+            if (shouldCheckRecipe || lastRecipe == null) {
                 lastRecipe = getRecipe();
                 shouldCheckRecipe = false;
             }
@@ -384,7 +384,7 @@ public class GTCXTileMultiFusionReactor extends GTTileMultiBaseMachine implement
                 }
             }
         } else {
-            ItemStack outputStack = this.getStackInSlot(2);
+            ItemStack outputStack = this.getStackInSlot(slotOutput);
             if (outputStack.isEmpty()){
                 return lastRecipe;
             }
