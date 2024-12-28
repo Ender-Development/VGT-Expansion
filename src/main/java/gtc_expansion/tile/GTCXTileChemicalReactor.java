@@ -317,6 +317,11 @@ public class GTCXTileChemicalReactor extends GTTileBaseMachine implements ITankL
         if (output instanceof GTFluidMachineOutput){
             for (FluidStack fluid : ((GTFluidMachineOutput)output).getFluids()){
                 outputTank.fillInternal(fluid, true);
+                if (!output.getAllOutputs().isEmpty()){
+                    for (ItemStack stack : output.getAllOutputs()){
+                        outputs.add(new MultiSlotOutput(stack, getOutputSlots()));
+                    }
+                }
                 onRecipeComplete();
             }
         } else {

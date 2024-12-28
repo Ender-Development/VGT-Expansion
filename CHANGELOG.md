@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.3.2
+### Bugfixes
+- fixed Chemical Reactor recipes with item and fluid outputs only outputting the fluid
+
 ## v0.3.1
 Sorry that this update took so long. I'm involved in quite a few projects and didn't have the time to work on this mod. The next thing on my todo list is implementing GroovyScript support, which may be a bit difficult as the mod uses the IC2 way of registering recipes. So whenever IC2/VGT gets proper GroovyScript support, it _should_ automatically work for this mod as well.
 
