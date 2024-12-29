@@ -1,5 +1,6 @@
 package gtc_expansion.tile.multi;
 
+import gtc_expansion.GTCXConfiguration;
 import gtc_expansion.container.GTCXContainerLargeGasTurbine;
 import gtc_expansion.container.GTCXContainerLargeGasTurbineHatch;
 import gtc_expansion.data.GTCXBlocks;
@@ -336,18 +337,20 @@ public class GTCXTileMultiLargeGasTurbine extends TileEntityMachine implements I
                         energy += production;
                         if (ticker >= 80){
                             ItemStack slotStack = this.getStackInSlot(0);
-                            if (slotStack.attemptDamageItem(1, world.rand, null)) {
-                                if (slotStack.getItem() instanceof GTCXItemTurbineRotor){
-                                    this.setStackInSlot(0, ((GTCXItemTurbineRotor)slotStack.getItem()).getBroken());
-                                } else {
-                                    slotStack.shrink(1);
-                                }
-                                if (world.isAnyPlayerWithinRangeAt(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), 5)){
-                                    for (EntityPlayer player : world.playerEntities){
-                                        if (EntitySelectors.NOT_SPECTATING.apply(player) && !player.isCreative()) {
-                                            double d0 = player.getDistanceSq(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ());
-                                            if (d0 < 5 * 5) {
-                                                player.attackEntityFrom(DamageSource.GENERIC, 8);
+                            if (GTCXConfiguration.general.enableLargeTurbineRotorDamage){
+                                if (slotStack.attemptDamageItem(1, world.rand, null)) {
+                                    if (slotStack.getItem() instanceof GTCXItemTurbineRotor) {
+                                        this.setStackInSlot(0, ((GTCXItemTurbineRotor) slotStack.getItem()).getBroken());
+                                    } else {
+                                        slotStack.shrink(1);
+                                    }
+                                    if (world.isAnyPlayerWithinRangeAt(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), 5) && GTCXConfiguration.general.enableLargeTurbinePlayerDamage) {
+                                        for (EntityPlayer player : world.playerEntities) {
+                                            if (EntitySelectors.NOT_SPECTATING.apply(player) && !player.isCreative()) {
+                                                double d0 = player.getDistanceSq(this.getPos().getX(), this.getPos().getY(), this.getPos().getZ());
+                                                if (d0 < 5 * 5) {
+                                                    player.attackEntityFrom(DamageSource.GENERIC, GTCXConfiguration.general.largeTurbinePlayerDamage);
+                                                }
                                             }
                                         }
                                     }

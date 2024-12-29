@@ -162,6 +162,13 @@ public class GTCXConfiguration {
         public boolean enableSteamMachines = true;
         @Comment("Enables crushed ores being able to be right clicked in a cauldron to get the washed stuff.")
         public boolean cauldronOreWashing = true;
+        @Comment("If the Rotor item inside the large turbine should take damage over time.")
+        public boolean enableLargeTurbineRotorDamage = true;
+        @Comment("If the player should take damage when within the range of a breaking turbine.")
+        public boolean enableLargeTurbinePlayerDamage = true;
+        @Comment("The amount of damage the turbine deals to the player.")
+        @RangeInt(min = 1)
+        public int largeTurbinePlayerDamage = 8;
     }
 
     @Comment("Mod Compatability")
