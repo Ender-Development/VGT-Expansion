@@ -13,7 +13,12 @@ dependencies {
 
     implementation "com.azanor.baubles:Baubles:1.12-" + project.baubles
     implementation rfg.deobf("curse.maven:ic2_classic-242942:" + project.ic2c)
-    implementation rfg.deobf("curse.maven:vintage-gregtech-844311:" + project.vgt)
+
+    if (project.gtc_over_vgt.toBoolean()) {
+        implementation rfg.deobf("curse.maven:gregtech-classic-324021:" + project.gtc)
+    } else {
+        implementation rfg.deobf("curse.maven:vintage-gregtech-844311:" + project.vgt)
+    }
 
     // Compatibility
     compileOnly rfg.deobf("curse.maven:ic2c-extras-302906:" + project.ic2c_ex)

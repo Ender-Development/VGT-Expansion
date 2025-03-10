@@ -1,20 +1,30 @@
 package gtc_expansion.mixin;
 
-import com.google.common.collect.ImmutableList;
-import gtc_expansion.GTCExpansion;
+import com.google.common.collect.ImmutableMap;
+import gtclassic.GTMod;
 import net.minecraftforge.fml.common.Loader;
 import zone.rong.mixinbooter.ILateMixinLoader;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Map;
+import java.util.function.BooleanSupplier;
 
 public class LateMixin implements ILateMixinLoader {
-    public static final List<String> modMixins = ImmutableList.of(
-            "gtclassic"
-    );
+    private static final Map<String, BooleanSupplier> MIXINS_CONFIG = ImmutableMap.copyOf(new HashMap<String, BooleanSupplier>(){
+        {
+            put("mixin.gtc_expansion.gtclassic.json", () -> Loader.isModLoaded("gtclassic") && GTMod.MODVERSION.equals("1.2.0"));
+        }
+    });
 
     @Override
     public List<String> getMixinConfigs() {
-        return modMixins.stream().filter(Loader::isModLoaded).map(mod -> "mixin."+ GTCExpansion.MODID +"." + mod + ".json").collect(Collectors.toList());
+        return new ArrayList<>(MIXINS_CONFIG.keySet());
+    }
+
+    @Override
+    public boolean shouldMixinConfigQueue(String config) {
+        return MIXINS_CONFIG.get(config).getAsBoolean();
     }
 }

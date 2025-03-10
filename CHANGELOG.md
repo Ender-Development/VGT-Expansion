@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.3.3
+### Changes
+- added a few more config options for the large Turbines
+    - Should the rotor should take damage?
+    - Should the player be hurt when a rotor breaks?
+    - How much damage should the player take?
+
+### Internal
+- redid the mixin registration
+- added compatibility with the newest version of GTClassic
+
 ## v0.3.2
 ### Bugfixes
 - fixed Chemical Reactor recipes with item and fluid outputs only outputting the fluid
