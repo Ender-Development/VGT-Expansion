@@ -1,0 +1,13 @@
+{
+	"package": "org.ender_development.gtc_expansion.mixin.gtclassic",
+	"required": true,
+	"refmap": "mixins.gtc_expansion.refmap.json",
+	"target": "@env(DEFAULT)",
+	"minVersion": "0.8.5",
+	"compatibilityLevel": "JAVA_8",
+	"mixins": [
+      "GTEventPlayerLoginMixin"
+    ],
+	"server": [],
+	"client": []
+}

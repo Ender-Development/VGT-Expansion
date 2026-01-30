@@ -72,6 +72,7 @@ local.properties
 eclipse/
 classes
 *.bat
+*.credentials
 
 ### Minecraft ###
 /build/

@@ -1,15 +1,96 @@
+apply from: 'gradle/scripts/helpers.gradle'
+
+repositories {
+    // Other repositories described by default:
+    // CleanroomMC: https://maven.cleanroommc.com
+    exclusiveContent {
+        forRepository {
+            maven {
+                name 'CurseMaven'
+                url 'https://curse.cleanroommc.com'
+            }
+        }
+        filter {
+            includeGroup 'curse.maven'
+        }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name 'Modrinth'
+                url 'https://api.modrinth.com/maven'
+            }
+        }
+        filter {
+            includeGroup 'maven.modrinth'
+        }
+    }
+    maven {
+        name "BlameJared's Maven"
+        url "https://maven.blamejared.com/"
+    }
+    maven {
+        name 'Mod Maven'
+        url 'https://modmaven.dev'
+    }
+    maven {
+        name 'GTNH Maven'
+        url 'https://nexus.gtnewhorizons.com/repository/public/'
+    }
+    maven {
+        name 'GTCEu Maven'
+        url 'https://maven.gtceu.com'
+    }
+    maven {
+        name 'Cleanroom Maven'
+        url 'https://maven.cleanroommc.com'
+    }
+    maven { url "https://repo.spongepowered.org/repository/maven-public" }
+    maven { // Tech Reborn
+        name 'Tech Reborn'
+        url 'https://maven.modmuss50.me/'
+    }
+    maven { // Buildcraft
+        name 'buildcraft'
+        url 'https://mod-buildcraft.com/maven/'
+    }
+    maven { // CCL, CCC, NEI
+        name 'Chickenbones Repo'
+        url 'https://chickenbones.net/maven/'
+    }
+
+    maven { // The One Probe, EnderIO, EnderCore
+        name 'tterrag'
+        url 'https://maven.tterrag.com/'
+    }
+    maven { // CoFH
+        name 'Covers Maven'
+        url 'https://maven.covers1624.net/'
+    }
+    maven { // McJtyLib
+        url "https://modmaven.k-4u.nl"
+    }
+    maven { url "https://dvs1.progwml6.com/files/maven" }
+    maven { url "https://www.ryanliptak.com/maven/" }
+    maven { url "https://maven.thiakil.com/" }
+    mavenLocal() // Must be last for caching to work
+}
+
 dependencies {
     implementation "org.jetbrains:annotations:24.0.0"
+    // Include StripLatestForgeRequirements by default for the dev env, saves everyone a hassle
+    runtimeOnly 'com.cleanroommc:strip-latest-forge-requirements:1.0'
 
     // Dependencies
     implementation "CraftTweaker2:CraftTweaker2-API:" + project.crafttweaker
     implementation "CraftTweaker2:ZenScript:" + project.crafttweaker
     implementation "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-" + project.crafttweaker
 
-    implementation rfg.deobf("curse.maven:had-enough-items-557549:" + project.hei)
     implementation rfg.deobf("curse.maven:the-one-probe-community-edition-885670:" + project.top)
-    implementation("com.cleanroommc:groovyscript:" + project.groovyscript) { transitive = false }
-    // so it doesn't installs JEI
+    implementation("com.cleanroommc:groovyscript:" + project.groovyscript) {transitive = false}
+
+
+    implementation rfg.deobf("curse.maven:had-enough-items-557549:" + project.hei)
 
     implementation "com.azanor.baubles:Baubles:1.12-" + project.baubles
     implementation rfg.deobf("curse.maven:ic2_classic-242942:" + project.ic2c)
@@ -21,12 +102,16 @@ dependencies {
     }
 
     // Compatibility
+
+    gravisuit = "curse.maven:gravisuit-classic-314829:" + project.gravisuit
+
     compileOnly rfg.deobf("curse.maven:ic2c-extras-302906:" + project.ic2c_ex)
+    compileOnly rfg.deobf(gravisuit)
 
     if (project.compat_internal.toBoolean()) {
         runtimeOnly rfg.deobf("curse.maven:ic2c-extras-302906:" + project.ic2c_ex)
         runtimeOnly rfg.deobf("curse.maven:advanced-solars-classic-314835:" + project.advanced_solars)
-        runtimeOnly rfg.deobf("curse.maven:gravisuit-classic-314829:" + project.gravisuit)
+        runtimeOnly rfg.deobf(gravisuit)
         runtimeOnly rfg.deobf("curse.maven:ic2c-additions-304040:" + project.ic2c_ad)
         runtimeOnly rfg.deobf("curse.maven:ic2c-crop-overrides-334346:" + project.ic2c_crop)
         runtimeOnly rfg.deobf("curse.maven:ic2c-custom-soils-350486:" + project.ic2c_soil)
@@ -39,6 +124,10 @@ dependencies {
     redstone_flux = "curse.maven:redstone-flux-270789:" + project.redstone_flux
     cofh_core = "curse.maven:cofh-core-69162:" + project.cofh_core
     steve_carts = "curse.maven:steves-carts-reborn-253462:" + project.steve_carts
+    techreborn = "curse.maven:techreborn-233564:" + project.techreborn
+    projectred = "curse.maven:project-red-core-228702:" + project.projectred
+    buildcraft = "curse.maven:buildcraft-core-231305:" + project.buildcraft
+    reborncore = "curse.maven:reborncore-237903:" + project.reborncore
 
     compileOnly rfg.deobf(forestry)
     compileOnly rfg.deobf(railcraft)
@@ -46,6 +135,10 @@ dependencies {
     compileOnly rfg.deobf(twilight_forest)
     compileOnly rfg.deobf(redstone_flux)
     compileOnly rfg.deobf(cofh_core)
+    compileOnly rfg.deobf(reborncore)
+    compileOnly rfg.deobf(techreborn)
+    compileOnly rfg.deobf(projectred)
+    compileOnly rfg.deobf(buildcraft)
 
     if (project.compat_external.toBoolean()) {
         runtimeOnly rfg.deobf(forestry)
@@ -54,9 +147,11 @@ dependencies {
         runtimeOnly rfg.deobf(twilight_forest)
         runtimeOnly rfg.deobf(redstone_flux)
         runtimeOnly rfg.deobf(cofh_core)
-        runtimeOnly rfg.deobf("curse.maven:reborncore-237903:" + project.reborncore)
+        runtimeOnly rfg.deobf(reborncore)
         runtimeOnly rfg.deobf(steve_carts)
+        runtimeOnly rfg.deobf(techreborn)
         runtimeOnly rfg.deobf("curse.maven:sc-ic2c-compat-409410:" + project.sc_ic2c_compat)
+        runtimeOnly rfg.deobf(buildcraft)
     }
 
     // Runtime dependencies
