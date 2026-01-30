@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.3.4
+### Changes
+- updated buildscripts and utilize tags
+- fix error with the newest version of GTClassic
+
 ## v0.3.3
 ### Changes
 - added a few more config options for the large Turbines

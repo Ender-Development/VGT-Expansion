@@ -23,6 +23,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
+import org.ender_development.gtc_expansion.Tags;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -31,11 +32,14 @@ import java.util.Calendar;
 @Mod(modid = GTCExpansion.MODID, name = GTCExpansion.MODNAME, version = GTCExpansion.MODVERSION, dependencies = GTCExpansion.DEPENDS, useMetadata = true)
 public class GTCExpansion {
 
-	public static final String MODID = "gtc_expansion";
-	public static final String MODNAME = "VGT Expansion";
-	public static final String MODVERSION = "0.3.0";
-	public static final String DEPENDS = "required-after:ic2;required-after:ic2-classic-spmod;required-after:gtclassic@[1.2,);after:twilightforest@[3.9.984,);after:ic2c_extras@[1.4.8.7,);after:gravisuit@[1.0.8.1,);after:advancedsolars@[1.0.8,)";
-	@SidedProxy(clientSide = MODID + ".proxy.GTCXClientProxy", serverSide = MODID + ".proxy.GTCXCommonProxy")
+	public static final String MODID = Tags.MOD_ID;
+	public static final String MODNAME = Tags.MOD_NAME;
+	public static final String MODVERSION = Tags.VERSION;
+	public static final String DEPENDS = Tags.DEPENDENCIES;
+	@SidedProxy(
+            clientSide = MODID + ".proxy.GTCXClientProxy",
+            serverSide = MODID + ".proxy.GTCXCommonProxy"
+    )
 	public static GTCXCommonProxy proxy;
 	@Mod.Instance
 	public static GTCExpansion instance;
