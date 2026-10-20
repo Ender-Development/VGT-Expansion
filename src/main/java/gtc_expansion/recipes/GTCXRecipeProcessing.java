@@ -178,12 +178,14 @@ public class GTCXRecipeProcessing {
             GameRegistry.addSmelting(GTCXMaterialGen.getCrushedOre(GTCXMaterial.Silver, 1), Ic2Items.silverIngot.copy(), 0.5F);
             GameRegistry.addSmelting(GTCXMaterialGen.getCrushedOre(GTCXMaterial.Lead, 1), GTMaterialGen.getIngot(GTCXMaterial.Lead, 1), 0.5F);
             GameRegistry.addSmelting(GTCXMaterialGen.getCrushedOre(GTCXMaterial.Iron, 1), GTMaterialGen.get(Items.IRON_INGOT), 0.7F);
+            GameRegistry.addSmelting(GTCXMaterialGen.getCrushedOre(GTMaterial.Nickel, 1), GTMaterialGen.getIngot(GTMaterial.Nickel, 1), 0.5F);
             GameRegistry.addSmelting(GTCXMaterialGen.getPurifiedCrushedOre(GTCXMaterial.Iron, 1), GTMaterialGen.get(Items.IRON_INGOT), 1.0F);
             GameRegistry.addSmelting(GTCXMaterialGen.getPurifiedCrushedOre(GTCXMaterial.Gold, 1), GTMaterialGen.get(Items.GOLD_INGOT), 1.0F);
             GameRegistry.addSmelting(GTCXMaterialGen.getPurifiedCrushedOre(GTCXMaterial.Copper, 1), Ic2Items.copperIngot, 0.5F);
             GameRegistry.addSmelting(GTCXMaterialGen.getPurifiedCrushedOre(GTCXMaterial.Tin, 1), Ic2Items.tinIngot.copy(), 0.5F);
             GameRegistry.addSmelting(GTCXMaterialGen.getPurifiedCrushedOre(GTCXMaterial.Silver, 1), Ic2Items.silverIngot.copy(), 0.5F);
             GameRegistry.addSmelting(GTCXMaterialGen.getPurifiedCrushedOre(GTCXMaterial.Lead, 1), GTMaterialGen.getIngot(GTCXMaterial.Lead, 1), 0.5F);
+            GameRegistry.addSmelting(GTCXMaterialGen.getPurifiedCrushedOre(GTMaterial.Nickel, 1), GTMaterialGen.getIngot(GTMaterial.Nickel, 1), 0.5F);
         }
     }
 
