@@ -162,6 +162,8 @@ public class GTCXConfiguration {
         public boolean enableSteamMachines = true;
         @Comment("Enables crushed ores being able to be right clicked in a cauldron to get the washed stuff.")
         public boolean cauldronOreWashing = true;
+        @Comment("If the Distillation Tower should use Reinforced Casings instead of Advanced Casings.")
+        public boolean distillationTowerUsesReinforcedCasings = false;
         @Comment("If the Rotor item inside the large turbine should take damage over time.")
         public boolean enableLargeTurbineRotorDamage = true;
         @Comment("If the player should take damage when within the range of a breaking turbine.")

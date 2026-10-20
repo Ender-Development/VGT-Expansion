@@ -1,6 +1,7 @@
 package gtc_expansion.tile.multi;
 
 import gtc_expansion.GTCExpansion;
+import gtc_expansion.GTCXConfiguration;
 import gtc_expansion.GTCXMachineGui;
 import gtc_expansion.container.GTCXContainerDistillationTower;
 import gtc_expansion.data.GTCXBlocks;
@@ -75,10 +76,10 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class GTCXTileMultiDistillationTower extends GTTileMultiBaseMachine implements ITankListener, IClickable, IGTDebuggableTile, IFluidHandler {
-    public static final ResourceLocation GUI_LOCATION = new ResourceLocation(GTCExpansion.MODID, "textures/gui/distillationtower.png");
+    public static final ResourceLocation GUI_LOCATION = new ResourceLocation(GTCExpansion.MODID, (GTCXConfiguration.general.distillationTowerUsesReinforcedCasings ? "textures/gui/distillationtower_reinforced.png" : "textures/gui/distillationtower.png"));
     public static final List<Fluid> validFluids = new ArrayList<>();
     public static final IBlockState standardCasingState = GTCXBlocks.casingStandard.getDefaultState();
-    public static final IBlockState advancedCasingState = GTCXBlocks.casingReinforced.getDefaultState();
+    public static final IBlockState advancedCasingState = GTCXConfiguration.general.distillationTowerUsesReinforcedCasings ? GTCXBlocks.casingReinforced.getDefaultState() : GTCXBlocks.casingAdvanced.getDefaultState();
     public static final IBlockState airState = Blocks.AIR.getDefaultState();
     public static final int slotDisplayIn = 0;
     public static final int slotFuel = 1;
