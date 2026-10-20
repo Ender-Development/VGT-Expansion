@@ -13,7 +13,9 @@
 
 <br />
 
-VGT-Expansion is a fork of [GTC Expansion](https://github.com/Trinsdar/GTC-Expansion) and an addon to [Vintage GregTech](https://www.curseforge.com/minecraft/mc-mods/vintage-gregtech) adding various machines and such.
+VGT-Expansion is a fork of [GTC Expansion](https://github.com/Trinsdar/GTC-Expansion) and started as an addon to [Vintage GregTech](https://www.curseforge.com/minecraft/mc-mods/vintage-gregtech) adding various machines and such.
+Vintage GregTech itself is a fork of [GTClassic](https://www.curseforge.com/minecraft/mc-mods/gregtech-classic) and was created to make it compatible with newer versions of [IC2 Classic](https://www.curseforge.com/minecraft/mc-mods/ic2-classic).
+Since then, it's original author returned and started fixing issues in GTClassic again. They contacted me and now this fork also depends on GTClassic instead of Vintage GregTech as it is the most complete version of said mod.
 
 ## Builds
 You can download the latest files here on [curseforge](https://curseforge.com/minecraft/mc-mods/vgt-expansion).
@@ -28,20 +30,6 @@ You can download the latest files here on [curseforge](https://curseforge.com/mi
 **Planned Changes:**
 - native [GroovyScript](https://github.com/CleanroomMC/GroovyScript) support
 - add support for custom materials
-
-## [Ender-Development](https://github.com/Ender-Development)
-
-Our Team currently includes:
-- `_MasterEnderman_` - Project-Manager, Developer
-- `Klebestreifen` - Developer
-
-You can contact us on our [Discord](https://discord.gg/JF7x2vG).
-
-## Contributing
-Feel free to contribute to the project. We are always happy about pull requests.
-If you want to help us, you can find potential tasks in the [issue tracker](https://github.com/Ender-Development/Embers-Extended-Life/issues).
-Of course, you can also create new issues if you find a bug or have a suggestion for a new feature.
-Should you have any questions, feel free to ask us on [Discord](https://discord.gg/JF7x2vG).
 
 ## Partnership with Akliz
 

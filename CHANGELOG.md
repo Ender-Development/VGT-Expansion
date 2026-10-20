@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.4.0
+### Changes
+- depend on latest version of GTClassic
+- added a config option for the Distillation Tower on which casing to use
+- the GUI texture now reflects this change
+
+### Bugfixes
+- added missing Tiny Tungsten Dust
+- added missing smelting recipes for Crushed Nickel Ore and Purified Crushed Nickel Ore
+- fixed the broken recipe of the Distillation Tower
+- fixed Tiny Thorium Dust name
+
 ## v0.3.4
 ### Changes
 - updated buildscripts and utilize tags
